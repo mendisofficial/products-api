@@ -3,6 +3,9 @@ package uk.ac.westminster.productsapi;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.time.LocalDate;
+import java.time.LocalTime;
+
 @RestController
 public class HelloController {
     @GetMapping("/hello")
@@ -17,6 +20,6 @@ public class HelloController {
 
     @GetMapping("/status")
     public String status(){
-        return "Spring boot is up and running on apache tomcat server...";
+        return "Spring boot is up and running on apache tomcat server. Last checked " + LocalDate.now()+ " " + LocalTime.now();
     }
 }
